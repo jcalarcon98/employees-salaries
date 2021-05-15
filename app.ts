@@ -1,8 +1,10 @@
 import { makeQuestion, readInputInterface } from './src/components/input/input-utils';
 import UserInterface from './src/components/user-interface/user-interface';
-import ReadContext from './src/common/strategies/read-context';
 import Colors from './src/utils/color';
-import { getStrategy } from './src/utils/file-strategy-utils';
+import FilePathContext from './src/common/file-path/file-path.context';
+import { getStrategyByOption } from './src/common/file-path/file-path.utils';
+import UserInterfaceMessage from './src/components/user-interface/user-interface.messages';
+import { exitMain } from './src/components/user-interface/user-interface.utils';
 
 const main = async () => {
   console.clear();
@@ -11,22 +13,23 @@ const main = async () => {
 
   UserInterface.displayFileOptions();
 
-  const selectedFileOption : string = await makeQuestion(readInputInterface, 'Please, Enter your option: ');
+  const selectedFileOption : string = await makeQuestion(
+    readInputInterface,
+    UserInterfaceMessage.SELECT_OPTION,
+  );
 
   if (selectedFileOption === '0') {
-    readInputInterface.close();
-    return undefined;
+    return exitMain(Colors.BLUE, UserInterfaceMessage.GOOD_BYE, readInputInterface);
   }
 
-  const selectedStrategy = getStrategy(selectedFileOption);
+  const selectedStrategy = getStrategyByOption(selectedFileOption);
 
   if (!selectedStrategy) {
-    console.log(Colors.RED, 'Please provide a valid option');
-    return undefined;
+    return exitMain(Colors.RED, UserInterfaceMessage.INVALID_OPTION, readInputInterface);
   }
 
-  const context = new ReadContext(selectedStrategy.strategy);
-  const fileUrl = await context.getFileUrl();
+  const context = new FilePathContext(selectedStrategy);
+  const fileUrl = await context.getFilePath();
   console.log(fileUrl);
   return undefined;
 };

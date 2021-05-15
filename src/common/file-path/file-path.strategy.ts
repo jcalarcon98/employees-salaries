@@ -1,4 +1,4 @@
-interface ReadDataStrategy {
+interface FilePathStrategy {
   isInputRequired() : boolean;
 
   getInputMessage() : string;
@@ -6,4 +6,4 @@ interface ReadDataStrategy {
   getFile(filePath: string) : string;
 }
 
-export default ReadDataStrategy;
+export default FilePathStrategy;

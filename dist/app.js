@@ -14,25 +14,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const input_utils_1 = require("./src/components/input/input-utils");
 const user_interface_1 = __importDefault(require("./src/components/user-interface/user-interface"));
-const read_context_1 = __importDefault(require("./src/common/strategies/read-context"));
 const color_1 = __importDefault(require("./src/utils/color"));
-const file_strategy_utils_1 = require("./src/utils/file-strategy-utils");
+const file_path_context_1 = __importDefault(require("./src/common/file-path/file-path.context"));
+const file_path_utils_1 = require("./src/common/file-path/file-path.utils");
+const user_interface_messages_1 = __importDefault(require("./src/components/user-interface/user-interface.messages"));
+const user_interface_utils_1 = require("./src/components/user-interface/user-interface.utils");
 const main = () => __awaiter(void 0, void 0, void 0, function* () {
     console.clear();
     user_interface_1.default.displayHeader();
     user_interface_1.default.displayFileOptions();
-    const selectedFileOption = yield input_utils_1.makeQuestion(input_utils_1.readInputInterface, 'Please, Enter your option: ');
+    const selectedFileOption = yield input_utils_1.makeQuestion(input_utils_1.readInputInterface, user_interface_messages_1.default.SELECT_OPTION);
     if (selectedFileOption === '0') {
-        input_utils_1.readInputInterface.close();
-        return undefined;
+        return user_interface_utils_1.exitMain(color_1.default.BLUE, user_interface_messages_1.default.GOOD_BYE, input_utils_1.readInputInterface);
     }
-    const selectedStrategy = file_strategy_utils_1.getStrategy(selectedFileOption);
+    const selectedStrategy = file_path_utils_1.getStrategyByOption(selectedFileOption);
     if (!selectedStrategy) {
-        console.log(color_1.default.RED, 'Please provide a valid option');
-        return undefined;
+        return user_interface_utils_1.exitMain(color_1.default.RED, user_interface_messages_1.default.INVALID_OPTION, input_utils_1.readInputInterface);
     }
-    const context = new read_context_1.default(selectedStrategy.strategy);
-    const fileUrl = yield context.getFileUrl();
+    const context = new file_path_context_1.default(selectedStrategy);
+    const fileUrl = yield context.getFilePath();
     console.log(fileUrl);
     return undefined;
 });
