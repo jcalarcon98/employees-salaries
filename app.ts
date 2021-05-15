@@ -1,29 +1,33 @@
-import { isFileValid, getFileContent } from './src/components/file/file-utils';
-import { makeQuestion } from './src/components/input/input-utils';
+import { makeQuestion, readInputInterface } from './src/components/input/input-utils';
 import UserInterface from './src/components/user-interface/user-interface';
+import ReadContext from './src/common/strategies/read-context';
 import Colors from './src/utils/color';
+import { getStrategy } from './src/utils/file-strategy-utils';
 
 const main = async () => {
   console.clear();
 
   UserInterface.displayHeader();
 
-  const filePath: string = await makeQuestion(
-    'Please, provide the file URL or press enter if you want to use a default one: ',
-  );
+  UserInterface.displayFileOptions();
 
-  const { isValid, message } = isFileValid(filePath);
-  const fontColor = isValid ? Colors.GREEN : Colors.RED;
-  console.log(fontColor, message);
+  const selectedFileOption : string = await makeQuestion(readInputInterface, 'Please, Enter your option: ');
 
-  // TODO: Refactor this code
-  if (!isValid) {
+  if (selectedFileOption === '0') {
+    readInputInterface.close();
     return undefined;
   }
 
-  const fileContent = getFileContent(filePath);
-  console.log(fileContent);
+  const selectedStrategy = getStrategy(selectedFileOption);
 
+  if (!selectedStrategy) {
+    console.log(Colors.RED, 'Please provide a valid option');
+    return undefined;
+  }
+
+  const context = new ReadContext(selectedStrategy.strategy);
+  const fileUrl = await context.getFileUrl();
+  console.log(fileUrl);
   return undefined;
 };
 

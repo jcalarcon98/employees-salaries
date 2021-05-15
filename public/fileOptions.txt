@@ -1,0 +1,5 @@
+Please, select an option:
+1. Upload file from any directory
+2. Upload file from public folder project
+3. Use default file
+0. Exit

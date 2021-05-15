@@ -5,6 +5,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off"
   }
 }
