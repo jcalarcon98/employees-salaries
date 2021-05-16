@@ -1,5 +1,5 @@
 import readLine from 'readline';
-import UserInterface from './user-interface';
+import UserInterface from './user-interface.model';
 
 export const exitMain = (
   color: string,
