@@ -1,41 +1,24 @@
-import { DaysWorked } from './types/workedDays';
-import { Hours } from './types/hours';
-import WorkSchedule from '../../common/schedule/work-schedule.model';
-import { EmployeeWorkedInformation } from './types/employee-worked-information';
-import { getDayPaymentAmount } from './employee.utils';
+import { WorkedDays } from './types/workedDays';
+import { getDailyPay } from './employee.utils';
 
 class Employee {
   name: string;
 
-  private daysWorked: DaysWorked[];
+  private workedDays: WorkedDays[];
 
-  constructor(name: string, workedDays: DaysWorked[]) {
+  constructor(name: string, workedDays: WorkedDays[]) {
     this.name = name;
-    this.daysWorked = workedDays;
+    this.workedDays = workedDays;
   }
 
   get salary() {
     let salary = 0;
-    this.daysWorked.forEach(({ day, hours }) => {
-      const dayPayment = this.getDailyPay(day, hours);
+    this.workedDays.forEach(({ day, hours }) => {
+      const dayPayment = getDailyPay(day, hours);
       salary += dayPayment;
     });
 
     return salary;
-  }
-
-  private getDailyPay(day: string, hours: Hours) {
-    const workSchedule = new WorkSchedule();
-    const weekPeriod: string = workSchedule.getWeekPeriod(day);
-
-    const workInformation : EmployeeWorkedInformation = {
-      schedule: workSchedule,
-      weekPeriod,
-      ...hours,
-    };
-
-    const amountPay = getDayPaymentAmount(workInformation);
-    return amountPay;
   }
 }
 

@@ -1,5 +1,5 @@
 import Employee from './employee.model';
-import { DaysWorked } from './types/workedDays';
+import { WorkedDays } from './types/workedDays';
 import { getWorkedDays } from './employee.utils';
 import Delimiters from './enums/delimiters.enum';
 
@@ -12,7 +12,7 @@ class EmployeeService {
 
   private getEmployee(employeeInformation: string) : Employee {
     const [employeeName, workedDays] = employeeInformation.split(Delimiters.EMPLOYEE_HOURS);
-    const employeeDaysWorked : DaysWorked[] = this.getEmployeeDaysWorked(workedDays);
+    const employeeDaysWorked : WorkedDays[] = this.getEmployeeDaysWorked(workedDays);
     const employee = new Employee(employeeName, employeeDaysWorked);
     return employee;
   }
