@@ -1,3 +1,4 @@
+import { FileMessageType } from './types/file-error';
 import FilePathStrategy from '../../common/file-path/file-path.strategy';
 import Colors from '../../utils/color';
 import { exitMain } from '../user-interface/user-interface.utils';
@@ -17,24 +18,32 @@ class FileService {
     return selectedStrategy;
   }
 
-  async getFileContent(strategy: FilePathStrategy) : Promise<string[] | undefined> {
+  async getFileContent(strategy: FilePathStrategy) : Promise<FileMessageType> {
     const context : FilePathContext = new FilePathContext(strategy);
     const filePath : string = await context.getFilePath();
 
-    const { isValid, message } = isFileValid(filePath);
+    const { isValid, content: message } = isFileValid(filePath);
 
-    // TODO: Change to userINterfaceController
     if (!isValid) {
-      return exitMain(Colors.RED, message, readInputInterface);
+      return {
+        isValid: false,
+        content: message,
+      };
     }
 
     const fileContent : string[] = getFileContent(filePath);
 
     if (!hasFileContent(fileContent)) {
-      return undefined;
+      return {
+        isValid: false,
+        content: UserInterfaceMessage.EMPTY_FILE,
+      };
     }
 
-    return fileContent;
+    return {
+      isValid: true,
+      content: fileContent,
+    };
   }
 }
 

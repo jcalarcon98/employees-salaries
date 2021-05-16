@@ -20,20 +20,20 @@ export const isFileValid = (filePath: string) : FileMessageType => {
   if (!existFile(filePath)) {
     return {
       isValid: false,
-      message: FileMessage.WRONG_PATH,
+      content: FileMessage.WRONG_PATH,
     };
   }
 
   if (!isValidExtension(filePath)) {
     return {
       isValid: false,
-      message: FileMessage.WRONG_EXTENSION,
+      content: FileMessage.WRONG_EXTENSION,
     };
   }
 
   return {
     isValid: true,
-    message: FileMessage.CORRECTLY,
+    content: FileMessage.CORRECTLY,
   };
 };
 
