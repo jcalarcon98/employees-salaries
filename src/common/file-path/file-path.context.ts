@@ -1,5 +1,6 @@
-import { makeQuestion, readInputInterface } from '../../components/input/input-utils';
 import FilePathStrategy from './file-path.strategy';
+import UserInterface from '../../components/user-interface/user-interface.model';
+import { readInputInterface } from '../../components/user-interface/user-interface.utils';
 
 class FilePathContext {
   constructor(private filePathStrategy: FilePathStrategy) {}
@@ -9,7 +10,10 @@ class FilePathContext {
     const isInputRequired : boolean = this.filePathStrategy.isInputRequired();
 
     if (isInputRequired) {
-      fileUrl = await makeQuestion(readInputInterface, this.filePathStrategy.getInputMessage());
+      fileUrl = await UserInterface.makeQuestion(
+        readInputInterface,
+        this.filePathStrategy.getInputMessage(),
+      );
     }
 
     readInputInterface.close();

@@ -1,9 +1,8 @@
 import { FileMessageType } from './types/file-error';
 import FilePathStrategy from '../../common/file-path/file-path.strategy';
 import Colors from '../../utils/color';
-import { exitMain } from '../user-interface/user-interface.utils';
+import { exitMain, readInputInterface } from '../user-interface/user-interface.utils';
 import UserInterfaceMessage from '../user-interface/user-interface.messages';
-import { readInputInterface } from '../input/input-utils';
 import { getStrategyByOption } from '../../common/file-path/file-path.utils';
 import FilePathContext from '../../common/file-path/file-path.context';
 import { isFileValid, getFileContent, hasFileContent } from './file-utils';

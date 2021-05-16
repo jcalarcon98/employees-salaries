@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
+import readLine from 'readline';
 import Colors from '../../utils/color';
 
 const userInterfacePath = path.join(process.cwd(), 'public/UI.txt');
@@ -24,6 +25,14 @@ class UserInterface {
   static changeFontColor = (color: string) : void => {
     console.log(color);
   };
+
+  static makeQuestion = (readInput: readLine.Interface, question: string) : Promise<string> => (
+    new Promise((resolve) => {
+      readInput.question(question, (userInput: string) => {
+        resolve(userInput);
+      });
+    })
+  );
 }
 
 export default UserInterface;

@@ -11,3 +11,8 @@ export const exitMain = (
   readInputInterface.close();
   return undefined;
 };
+
+export const readInputInterface : readLine.Interface = readLine.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});

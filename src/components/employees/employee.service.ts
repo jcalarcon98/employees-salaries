@@ -1,41 +1,21 @@
-import Employee from './employee';
-import { WorkedDays } from './types/workedDays';
-import { getHourNumber } from './employee.utils';
+import Employee from './employee.model';
+import { DaysWorked } from './types/workedDays';
+import { getWorkedDays } from './employee.utils';
+import Delimiters from './enums/delimiters.enum';
 
 class EmployeeService {
-  private delimiter = {
-    EQUAL: '=',
-    COMMA: ',',
-    DASH: '-',
-  };
+  getEmployeeDaysWorked(daysWorkedData: string) {
+    const daysWorkedInformation : string[] = daysWorkedData.split(Delimiters.WORKED_DAYS);
+    const employeeWorkedDays = getWorkedDays(daysWorkedInformation);
+    return employeeWorkedDays;
+  }
 
-  private getEmployeeWorkedDays = (workedDaysData: string) : WorkedDays[] => {
-    const employeeWorkedDaysData : string[] = workedDaysData.split(this.delimiter.COMMA);
-    const workedDays : WorkedDays[] = [];
-
-    employeeWorkedDaysData.forEach((workeyDayData) => {
-      const currentDay: string = workeyDayData.substr(0, 2);
-      const pairHours: string = workeyDayData.substr(2);
-      const [entryHour, departureHour] = pairHours.split(this.delimiter.DASH);
-
-      const employeeWorkedDay : WorkedDays = {
-        day: currentDay,
-        hours: {
-          entryTime: getHourNumber(entryHour),
-          departureTime: getHourNumber(departureHour),
-        },
-      };
-      workedDays.push(employeeWorkedDay);
-    });
-    return workedDays;
-  };
-
-  private getEmployee = (employeeInformation: string) : Employee => {
-    const [employeeName, workedDays] = employeeInformation.split(this.delimiter.EQUAL);
-    const employeeWorkedDays : WorkedDays[] = this.getEmployeeWorkedDays(workedDays);
-    const employee = new Employee(employeeName, employeeWorkedDays);
+  private getEmployee(employeeInformation: string) : Employee {
+    const [employeeName, workedDays] = employeeInformation.split(Delimiters.EMPLOYEE_HOURS);
+    const employeeDaysWorked : DaysWorked[] = this.getEmployeeDaysWorked(workedDays);
+    const employee = new Employee(employeeName, employeeDaysWorked);
     return employee;
-  };
+  }
 
   getEmployees(fileContent: string[]) : Employee[] {
     const employees: Employee [] = [];
