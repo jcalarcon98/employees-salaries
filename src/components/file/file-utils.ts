@@ -17,16 +17,14 @@ export const isValidExtension = (filePath: string) : boolean => {
 };
 
 export const isFileValid = (filePath: string) : FileMessageType => {
-  const fileUrl = filePath !== '' ? filePath : getDefaultFileUrl();
-
-  if (!existFile(fileUrl)) {
+  if (!existFile(filePath)) {
     return {
       isValid: false,
-      message: FileMessage.WRONG_URL,
+      message: FileMessage.WRONG_PATH,
     };
   }
 
-  if (!isValidExtension(fileUrl)) {
+  if (!isValidExtension(filePath)) {
     return {
       isValid: false,
       message: FileMessage.WRONG_EXTENSION,
@@ -39,8 +37,10 @@ export const isFileValid = (filePath: string) : FileMessageType => {
   };
 };
 
-export const getFileContent = (filePath : string): string => {
-  const fileUrl = filePath !== '' ? filePath : getDefaultFileUrl();
-  const fileContent : string = fs.readFileSync(fileUrl, { encoding: 'utf-8' });
-  return fileContent;
+export const getFileContent = (filePath : string) : string[] => {
+  const fileContent : string[] = fs.readFileSync(filePath, { encoding: 'utf-8' }).split('\n');
+  const cleanFileContent : string[] = fileContent.filter((fileLine) => fileLine.trim() !== '');
+  return cleanFileContent;
 };
+
+export const hasFileContent = (fileContent: string[]) : boolean => fileContent.length > 0;

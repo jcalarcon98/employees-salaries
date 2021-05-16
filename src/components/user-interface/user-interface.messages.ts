@@ -4,6 +4,7 @@ enum UserInterfaceMessage {
   INVALID_OPTION = 'Your selected option is invalid, please provide a valid option',
   SELECT_OPTION = 'Please, Enter your option: ',
   GOOD_BYE = '!Thanks for comming! See you Later',
+  EMPTY_FILE = '!Can not calculate anything :(! THE FILE IS EMPTY',
 }
 
 export default UserInterfaceMessage;

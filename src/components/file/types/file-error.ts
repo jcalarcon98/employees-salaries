@@ -1,4 +1,4 @@
 export type FileMessageType = {
   isValid: boolean;
-  message?: string;
+  message: string;
 };
