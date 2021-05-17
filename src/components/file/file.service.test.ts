@@ -4,15 +4,16 @@ import UserInterfaceMessage from '../user-interface/user-interface.messages';
 import FilePathContext from '../../common/file-path/file-path.context';
 import { getDefaultFileUrl } from './file.utils';
 import FileProject from '../../common/strategies/file-path/file-project';
+import FilePathStrategy from '../../common/file-path/file-path.strategy';
 
 describe('FileService', () => {
   let fileService: FileService;
 
-  beforeEach(() => {
-    fileService = new FileService();
-  });
-
   describe('Cases inside getFileStrategy() function', () => {
+    beforeEach(() => {
+      fileService = new FileService();
+    });
+
     test('Should return false when selected option is 0', () => {
       const selectedOption : string = '0';
 
@@ -55,9 +56,14 @@ describe('FileService', () => {
   });
 
   describe('Cases inside getFileContent() function', () => {
-    test('Should return false if file is Invalid ', async () => {
-      const strategy = new FileDirectory();
+    let strategy : FilePathStrategy;
 
+    beforeEach(() => {
+      fileService = new FileService();
+      strategy = new FileDirectory();
+    });
+
+    test('Should return false if file is Invalid ', async () => {
       FilePathContext.prototype.getFilePath = jest.fn().mockImplementationOnce(() => 'nomatterpath');
 
       const { isValid } = await fileService.getFileContent(strategy);
@@ -66,8 +72,6 @@ describe('FileService', () => {
     });
 
     test('Should return true if file is completely valid', async () => {
-      const strategy = new FileDirectory();
-
       const mockImplementation = jest.fn().mockImplementationOnce(() => getDefaultFileUrl());
 
       FilePathContext.prototype.getFilePath = mockImplementation;
@@ -76,9 +80,9 @@ describe('FileService', () => {
 
       expect(isValid).toBeTruthy();
     });
-  });
 
-  afterAll(() => {
-    jest.restoreAllMocks();
+    afterAll(() => {
+      jest.restoreAllMocks();
+    });
   });
 });

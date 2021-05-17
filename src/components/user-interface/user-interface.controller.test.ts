@@ -4,7 +4,11 @@ import UserInterfaceMessage from './user-interface.messages';
 import UserInterfaceService from './user-interface.service';
 
 describe('UserInterfaceController', () => {
-  const userInterfaceController = new UserInterfaceController();
+  let userInterfaceController : UserInterfaceController;
+
+  beforeEach(() => {
+    userInterfaceController = new UserInterfaceController();
+  });
 
   const consoleMock = jest.spyOn(console, 'log');
 

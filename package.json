@@ -6,8 +6,8 @@
   "scripts": {
     "start": "tsc && node dist/app.js",
     "lint": "npx eslint . --ext .ts",
-    "test": "jest",
-    "coverage": "jest --coverage --runInBand --detectOpenHandles"
+    "test": "jest --detectOpenHandles --forceExit",
+    "coverage": "jest --coverage --detectOpenHandles --forceExit"
   },
   "author": "",
   "license": "ISC",
