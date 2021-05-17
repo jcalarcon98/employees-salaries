@@ -5,9 +5,11 @@ import { exitMain, readInputInterface } from './user-interface.utils';
 import Colors from '../../utils/color';
 
 class UserInterfaceController {
-  constructor(
-    private userInterfaceService: UserInterfaceService,
-  ) {}
+  private userInterfaceService: UserInterfaceService;
+
+  constructor() {
+    this.userInterfaceService = new UserInterfaceService();
+  }
 
   async execute() {
     console.clear();
@@ -19,13 +21,20 @@ class UserInterfaceController {
       UserInterfaceMessage.SELECT_OPTION,
     );
 
-    const strategy = this.userInterfaceService.getStrategy(selectedFileOption);
+    console.log(selectedFileOption);
 
-    if (!strategy) {
-      return exitMain(Colors.RED, UserInterfaceMessage.INVALID_OPTION, readInputInterface);
+    const {
+      isValid: isValidStrategy,
+      content: contentStrategy,
+    } = this.userInterfaceService.getStrategy(selectedFileOption);
+
+    if (!isValidStrategy) {
+      const isGoodByeMessage = contentStrategy === UserInterfaceMessage.GOOD_BYE;
+      const colorMessage = isGoodByeMessage ? Colors.BLUE : Colors.RED;
+      return exitMain(colorMessage, contentStrategy, readInputInterface);
     }
 
-    const { isValid, content } = await this.userInterfaceService.getContent(strategy);
+    const { isValid, content } = await this.userInterfaceService.getContent(contentStrategy);
 
     if (!isValid) {
       return exitMain(Colors.RED, content as string, readInputInterface);

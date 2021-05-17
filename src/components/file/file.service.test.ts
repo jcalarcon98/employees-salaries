@@ -11,32 +11,32 @@ describe('FileService', () => {
     fileService = new FileService();
   });
 
-  const consoleMock = jest.spyOn(console, 'log');
-
   describe('Cases inside getFileStrategy() function', () => {
-    test('Should return undefined when selected option is 0', () => {
+    test('Should return false when selected option is 0', () => {
       const selectedOption : string = '0';
 
-      const fileStrategy = fileService.getFileStrategy(selectedOption);
+      const { isValid, content } = fileService.getFileStrategy(selectedOption);
 
-      expect(fileStrategy).toBeUndefined();
-      expect(consoleMock).toHaveBeenCalledWith(UserInterfaceMessage.GOOD_BYE);
+      expect(isValid).toBeFalsy();
+      expect(content).toBe(UserInterfaceMessage.GOOD_BYE);
     });
 
     test('Should return a strategy when selected option is valid and different than zero', () => {
       const selectedOption : string = '1';
 
-      const fileStrategy = fileService.getFileStrategy(selectedOption);
+      const { isValid, content } = fileService.getFileStrategy(selectedOption);
 
-      expect(fileStrategy).toBeInstanceOf(FileDirectory);
+      expect(isValid).toBeTruthy();
+      expect(content).toBeInstanceOf(FileDirectory);
     });
 
     test('Should return undefined when selected option is invalid', () => {
       const selectedOption : string = 'nooomatteer';
 
-      const fileStrategy = fileService.getFileStrategy(selectedOption);
+      const { isValid, content } = fileService.getFileStrategy(selectedOption);
 
-      expect(fileStrategy).toBeUndefined();
+      expect(isValid).toBeFalsy();
+      expect(content).toBe(UserInterfaceMessage.INVALID_OPTION);
     });
   });
 

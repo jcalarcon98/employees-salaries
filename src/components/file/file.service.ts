@@ -1,20 +1,32 @@
 import { FileMessageType } from './types/file-error';
 import FilePathStrategy from '../../common/file-path/file-path.strategy';
-import Colors from '../../utils/color';
-import { exitMain, readInputInterface } from '../user-interface/user-interface.utils';
 import UserInterfaceMessage from '../user-interface/user-interface.messages';
 import { getStrategyByOption } from '../../common/file-path/file-path.utils';
 import FilePathContext from '../../common/file-path/file-path.context';
 import { isFileValid } from './file.utils';
 
 class FileService {
-  getFileStrategy(selectedOption: string) : FilePathStrategy | undefined {
+  getFileStrategy(selectedOption: string) : FileMessageType {
     if (selectedOption === '0') {
-      return exitMain(Colors.BLUE, UserInterfaceMessage.GOOD_BYE, readInputInterface);
+      return {
+        isValid: false,
+        content: UserInterfaceMessage.GOOD_BYE,
+      };
     }
 
     const selectedStrategy : FilePathStrategy | undefined = getStrategyByOption(selectedOption);
-    return selectedStrategy;
+
+    if (!selectedStrategy) {
+      return {
+        isValid: false,
+        content: UserInterfaceMessage.INVALID_OPTION,
+      };
+    }
+
+    return {
+      isValid: true,
+      content: selectedStrategy,
+    };
   }
 
   async getFileContent(strategy: FilePathStrategy) : Promise<FileMessageType> {

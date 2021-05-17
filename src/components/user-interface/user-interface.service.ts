@@ -4,12 +4,16 @@ import EmployeeService from '../employees/employee.service';
 import { FileMessageType } from '../file/types/file-error';
 
 class UserInterfaceService {
-  constructor(
-    private fileService: FileService,
-    private employeeService: EmployeeService,
-  ) {}
+  private fileService: FileService;
 
-  getStrategy(selectedOption: string) : FilePathStrategy | undefined {
+  private employeeService: EmployeeService;
+
+  constructor() {
+    this.fileService = new FileService();
+    this.employeeService = new EmployeeService();
+  }
+
+  getStrategy(selectedOption: string) : FileMessageType {
     return this.fileService.getFileStrategy(selectedOption);
   }
 
