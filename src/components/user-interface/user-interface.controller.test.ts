@@ -27,6 +27,16 @@ describe('UserInterfaceController', () => {
     expect(consoleMock).toHaveBeenCalledWith(UserInterfaceMessage.INVALID_OPTION);
   });
 
+  test('Should return undefined if select option is exit', async () => {
+    const defaultFileOption = '0';
+    jest.spyOn(UserInterface, 'makeQuestion').mockImplementation(async () => defaultFileOption);
+
+    const selectedStrategy = await userInterfaceController.execute();
+
+    expect(selectedStrategy).toBeUndefined();
+    expect(consoleMock).toHaveBeenCalledWith(UserInterfaceMessage.GOOD_BYE);
+  });
+
   test('Should return undefined if File is corrupted ', async () => {
     const defaultFileOption = '2';
     jest.spyOn(UserInterface, 'makeQuestion').mockImplementation(async () => defaultFileOption);
@@ -44,5 +54,9 @@ describe('UserInterfaceController', () => {
 
     expect(fileContent).toBeUndefined();
     expect(consoleMock).toHaveBeenCalledWith(UserInterfaceMessage.INVALID_OPTION);
+  });
+
+  afterAll(() => {
+    jest.restoreAllMocks();
   });
 });
