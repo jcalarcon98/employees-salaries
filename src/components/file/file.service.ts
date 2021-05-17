@@ -5,7 +5,7 @@ import { exitMain, readInputInterface } from '../user-interface/user-interface.u
 import UserInterfaceMessage from '../user-interface/user-interface.messages';
 import { getStrategyByOption } from '../../common/file-path/file-path.utils';
 import FilePathContext from '../../common/file-path/file-path.context';
-import { isFileValid, getFileContent, hasFileContent } from './file-utils';
+import { isFileValid } from './file-utils';
 
 class FileService {
   getFileStrategy(selectedOption: string) : FilePathStrategy | undefined {
@@ -21,27 +21,18 @@ class FileService {
     const context : FilePathContext = new FilePathContext(strategy);
     const filePath : string = await context.getFilePath();
 
-    const { isValid, content: message } = isFileValid(filePath);
+    const { isValid, content } = isFileValid(filePath);
 
     if (!isValid) {
       return {
         isValid: false,
-        content: message,
-      };
-    }
-
-    const fileContent : string[] = getFileContent(filePath);
-
-    if (!hasFileContent(fileContent)) {
-      return {
-        isValid: false,
-        content: UserInterfaceMessage.EMPTY_FILE,
+        content,
       };
     }
 
     return {
       isValid: true,
-      content: fileContent,
+      content,
     };
   }
 }
