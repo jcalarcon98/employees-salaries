@@ -1,5 +1,5 @@
 import path from 'path';
-import { getDefaultFileUrl, isValidExtension, isFileValid } from './file-utils';
+import { getDefaultFileUrl, isValidExtension, isFileValid } from './file.utils';
 import FileMessage from './file-messages';
 
 describe('FileUtils', () => {

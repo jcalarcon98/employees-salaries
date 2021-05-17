@@ -5,7 +5,7 @@ import { exitMain, readInputInterface } from '../user-interface/user-interface.u
 import UserInterfaceMessage from '../user-interface/user-interface.messages';
 import { getStrategyByOption } from '../../common/file-path/file-path.utils';
 import FilePathContext from '../../common/file-path/file-path.context';
-import { isFileValid } from './file-utils';
+import { isFileValid } from './file.utils';
 
 class FileService {
   getFileStrategy(selectedOption: string) : FilePathStrategy | undefined {
