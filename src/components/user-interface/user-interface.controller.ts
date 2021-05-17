@@ -21,8 +21,6 @@ class UserInterfaceController {
       UserInterfaceMessage.SELECT_OPTION,
     );
 
-    console.log(selectedFileOption);
-
     const {
       isValid: isValidStrategy,
       content: contentStrategy,
@@ -37,16 +35,12 @@ class UserInterfaceController {
     const { isValid, content } = await this.userInterfaceService.getContent(contentStrategy);
 
     if (!isValid) {
-      return exitMain(Colors.RED, content as string, readInputInterface);
+      return exitMain(Colors.RED, content, readInputInterface);
     }
 
-    const employees = this.userInterfaceService.getEmployees(content as string[]);
+    const employees = this.userInterfaceService.getEmployees(content);
 
-    employees.forEach((currentEmployee) => {
-      console.log(currentEmployee.salary, currentEmployee.name);
-    });
-
-    return undefined;
+    return employees;
   }
 }
 

@@ -30,7 +30,7 @@ describe('FileService', () => {
       expect(content).toBeInstanceOf(FileDirectory);
     });
 
-    test('Should return undefined when selected option is invalid', () => {
+    test('Should return false when selected option is invalid', () => {
       const selectedOption : string = 'nooomatteer';
 
       const { isValid, content } = fileService.getFileStrategy(selectedOption);
