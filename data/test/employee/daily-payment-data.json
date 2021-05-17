@@ -1,0 +1,112 @@
+[
+  {
+    "workedDay": {
+      "day": "MO",
+      "hours": {
+        "entryTime" : 8,
+        "departureTime" : 15
+      }
+    },
+    "payment": 115
+  },
+  {
+    "workedDay": {
+      "day": "TU",
+      "hours": {
+        "entryTime" : 10,
+        "departureTime" : 12
+      }
+    },
+    "payment": 30
+  },
+  {
+    "workedDay": {
+      "day": "TH",
+      "hours": {
+        "entryTime" : 14,
+        "departureTime" : 18
+      }
+    },
+    "payment": 60
+  },
+  {
+    "workedDay": {
+      "day": "FR",
+      "hours": {
+        "entryTime" : 0,
+        "departureTime" : 0
+      }
+    },
+    "payment": 480
+  },
+  {
+    "workedDay": {
+      "day": "SA",
+      "hours": {
+        "entryTime" : 0,
+        "departureTime" : 0
+      }
+    },
+    "payment": 600
+  },
+  {
+    "workedDay": {
+      "day": "MO",
+      "hours": {
+        "entryTime" : 10,
+        "departureTime" : 20
+      }
+    },
+    "payment": 160
+  },
+  {
+    "workedDay": {
+      "day": "SU",
+      "hours": {
+        "entryTime" : 10,
+        "departureTime" : 20
+      }
+    },
+    "payment": 210
+  },
+  {
+    "workedDay": {
+      "day": "MO",
+      "hours": {
+        "entryTime" : 19,
+        "departureTime" : 0
+      }
+    },
+    "payment": 100
+  },
+  {
+    "workedDay": {
+      "day": "TH",
+      "hours": {
+        "entryTime" : 16,
+        "departureTime" : 23
+      }
+    },
+    "payment": 130
+  },
+  {
+    "workedDay": {
+      "day": "SU",
+      "hours": {
+        "entryTime" : 18,
+        "departureTime" : 0
+      }
+    },
+    "payment": 150
+  },
+  {
+    "workedDay": {
+      "day": "MO",
+      "hours": {
+        "entryTime" : 18,
+        "departureTime" : 0
+      }
+    },
+    "payment": 120
+  }
+]

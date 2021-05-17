@@ -1,6 +1,6 @@
 import { Hours } from './hours';
 
-export type WorkedDays = {
+export type WorkedDay = {
   day: string,
   hours: Hours,
 };
