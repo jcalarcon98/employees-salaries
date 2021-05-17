@@ -1,6 +1,7 @@
 import readLine from 'readline';
 import UserInterface from './user-interface.model';
 import Employee from '../employees/employee.model';
+import Colors from '../../utils/color';
 
 export const exitMain = (
   color: string,
@@ -19,7 +20,8 @@ export const readInputInterface : readLine.Interface = readLine.createInterface(
 });
 
 export const showEmployees = (employees: Employee[]) => {
-  employees.forEach((currentEmployee) => {
-    console.log(currentEmployee.salary, currentEmployee.name);
+  UserInterface.changeFontColor(Colors.BLUE);
+  employees.forEach(({ name, salary }) => {
+    console.log(`The amount to pay ${name} is: ${salary} USD`);
   });
 };
