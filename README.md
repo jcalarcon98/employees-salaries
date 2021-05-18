@@ -3,7 +3,6 @@
 ![NodeJs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-![Tests](https://github.com/ant-design/ant-design/workflows/%E2%9C%85%20test/badge.svg)
 [![Code Coverage](https://img.shields.io/badge/CODE%20COVERAGE-%3E%2090%20%25-green)](https://jcalarcon98.github.io/employees-salaries/)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/jcalarcon98/employees-salaries/blob/main/LICENSE)
 
@@ -13,7 +12,7 @@
 * [About the exercise](#about-the-exercise)
   * [Problem](#problem)
   * [Solution](#solution)
-* [Solution Archutecture](#architecture)
+* [Solution Architecture](#architecture)
   * [Low level Design](#low-level-design)
   * [Core Communication](#core-communication)
   * [High Level Design](#high-level-design)
