@@ -14,6 +14,10 @@
   * [Problem](#problem)
   * [Solution](#solution)
 * [Solution Archutecture](#architecture)
+  * [Low level Design](#low-level-design)
+  * [Core Communication](#core-communication)
+  * [High Level Design](#high-level-design)
+* [Approach and Methodology](#approach-and-methodology)
 
 ## About the Exercise
 
@@ -42,4 +46,39 @@ To achieve this solution it was decided to use the next technologies:
   - [Code Style Practices](https://github.com/goldbergyoni/nodebestpractices#3-code-style-practices)
   - [Testing and Quality Practices](https://github.com/goldbergyoni/nodebestpractices#4-testing-and-overall-quality-practices)
 
+
+<hr/>
+
 ## Architecture
+
+### Low Level Design
+
+This diagram provides an overview of the communication between the application components. 
+
+<p align="center">
+  <img src="images/architecture/low-architecture.png" width="800" align='center'>
+</p>
+
+### Core Communication
+
+This diagram shows the main communication between the elements of each component.
+
+<p align="center">
+  <img src="images/architecture/core-diagram.png" width="900" align='center'>
+</p>
+
+### High Level Design
+
+This diagram shows the communication between all the elements of the application, detailing the content of each of the components.
+
+<p align="center">
+  <img src="images/architecture/high-architecture.png" width="1800" align='center'>
+</p>
+
+<hr/>
+
+## Approach and Methodology
+
+Before developing the solution, the following activities were carried out:
+
+### Solution analysis
