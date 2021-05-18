@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1621314484971" clover="3.2.0">
+  <project timestamp="1621314484971" name="All files">
+    <metrics statements="221" coveredstatements="214" conditionals="42" coveredconditionals="40" methods="58" coveredmethods="50" elements="321" coveredelements="304" complexity="0" loc="221" ncloc="221" packages="8" files="19" classes="19"/>
+    <package name="common.file-path">
+      <metrics statements="18" coveredstatements="17" conditionals="6" coveredconditionals="5" methods="4" coveredmethods="4"/>
+      <file name="file-path.context.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/common/file-path/file-path.context.ts">
+        <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="file-path.utils.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/common/file-path/file-path.utils.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="24" count="14" type="stmt"/>
+        <line num="26" count="6" type="cond" truecount="4" falsecount="0"/>
+      </file>
+    </package>
+    <package name="common.schedule">
+      <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="7" methods="4" coveredmethods="4"/>
+      <file name="work-schedule.model.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/common/schedule/work-schedule.model.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="8" coveredconditionals="7" methods="4" coveredmethods="4"/>
+        <line num="7" count="43" type="stmt"/>
+        <line num="13" count="43" type="stmt"/>
+        <line num="20" count="43" type="stmt"/>
+        <line num="36" count="236" type="stmt"/>
+        <line num="37" count="506" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="236" type="cond" truecount="3" falsecount="1"/>
+        <line num="44" count="43" type="stmt"/>
+        <line num="45" count="43" type="cond" truecount="2" falsecount="0"/>
+        <line num="49" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="common.strategies.file-path">
+      <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="9"/>
+      <file name="default-file.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/common/strategies/file-path/default-file.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="5" count="6" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="file-directory.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/common/strategies/file-path/file-directory.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="7" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+      <file name="file-project.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/common/strategies/file-path/file-project.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="6" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.employees">
+      <metrics statements="49" coveredstatements="49" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="11"/>
+      <file name="employee.model.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/employees/employee.model.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="11" count="13" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="stmt"/>
+        <line num="17" count="32" type="stmt"/>
+        <line num="18" count="32" type="stmt"/>
+        <line num="21" count="7" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+      </file>
+      <file name="employee.service.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/employees/employee.service.ts">
+        <metrics statements="16" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="8" count="13" type="stmt"/>
+        <line num="9" count="13" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
+        <line num="14" count="13" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="13" type="stmt"/>
+        <line num="24" count="13" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+      </file>
+      <file name="employee.utils.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/employees/employee.utils.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="137" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="43" type="stmt"/>
+        <line num="9" count="43" type="stmt"/>
+        <line num="10" count="43" type="stmt"/>
+        <line num="11" count="43" type="stmt"/>
+        <line num="12" count="43" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="43" type="stmt"/>
+        <line num="15" count="43" type="stmt"/>
+        <line num="16" count="236" type="stmt"/>
+        <line num="17" count="236" type="stmt"/>
+        <line num="18" count="236" type="stmt"/>
+        <line num="21" count="43" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="14" type="stmt"/>
+        <line num="27" count="14" type="stmt"/>
+        <line num="28" count="66" type="stmt"/>
+        <line num="29" count="66" type="stmt"/>
+        <line num="30" count="66" type="stmt"/>
+        <line num="32" count="66" type="stmt"/>
+        <line num="39" count="66" type="stmt"/>
+        <line num="41" count="14" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.employees.enums">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="delimiters.enum.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/employees/enums/delimiters.enum.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.file">
+      <metrics statements="47" coveredstatements="47" conditionals="14" coveredconditionals="14" methods="9" coveredmethods="9"/>
+      <file name="file-messages.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/file/file-messages.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+      </file>
+      <file name="file.service.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/file/file.service.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="10" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="38" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="52" count="2" type="stmt"/>
+      </file>
+      <file name="file.utils.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/file/file.utils.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="19" count="19" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="33" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="42" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.user-interface">
+      <metrics statements="68" coveredstatements="62" conditionals="8" coveredconditionals="8" methods="16" coveredmethods="11"/>
+      <file name="user-interface.controller.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/user-interface/user-interface.controller.ts">
+        <metrics statements="21" coveredstatements="21" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="29" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="37" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+      <file name="user-interface.messages.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/user-interface/user-interface.messages.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+      <file name="user-interface.model.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/user-interface/user-interface.model.ts">
+        <metrics statements="19" coveredstatements="16" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+      </file>
+      <file name="user-interface.service.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/user-interface/user-interface.service.ts">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+      </file>
+      <file name="user-interface.utils.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/components/user-interface/user-interface.utils.ts">
+        <metrics statements="13" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="color.ts" path="/home/runner/work/employees-salaries/employees-salaries/src/utils/color.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
