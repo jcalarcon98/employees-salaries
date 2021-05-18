@@ -1,11 +1,11 @@
 <h1 align="center"> ACME COMPANY </h1>
 
-<p align='center'>
+![NodeJs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
 ![Code Coverage](https://github.com/ant-design/ant-design/workflows/%E2%9C%85%20test/badge.svg)
 ![Code Coverage](https://img.shields.io/badge/CODE%20COVERAGE-%3E%2090%20%25-green)
-
- </p>
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/jcalarcon98/employees-salaries/blob/main/LICENSE)
 
 
 ## Table of Contents
@@ -27,6 +27,9 @@
   * [Run tests](#run-tests)
   * [Get code coverage](#run-code-coverage)
   * [Run linter](#run-linter)
+* [Extras](#extras)
+  * [Strategy Pattern Applied](#strategy-pattern-applied)
+  * [AAA pattern on tests](#aaa-pattern-on-tests)
 
 ## About the Exercise
 
