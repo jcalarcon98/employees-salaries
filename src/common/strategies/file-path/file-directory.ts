@@ -1,7 +1,7 @@
 import UserInterfaceMessage from '../../../components/user-interface/user-interface.messages';
 import FilePathStrategy from '../../file-path/file-path.strategy';
 
-class FileDirectory implements FilePathStrategy {
+class DirectoryFile implements FilePathStrategy {
   isInputRequired = () : boolean => true;
 
   getInputMessage = () : string => UserInterfaceMessage.GET_FILE_URL;
@@ -9,4 +9,4 @@ class FileDirectory implements FilePathStrategy {
   getFile = (filePath : string) => filePath;
 }
 
-export default FileDirectory;
+export default DirectoryFile;

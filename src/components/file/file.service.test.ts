@@ -1,9 +1,9 @@
 import FileService from './file.service';
-import FileDirectory from '../../common/strategies/file-path/file-directory';
+import DirectoryFile from '../../common/strategies/file-path/file-directory';
 import UserInterfaceMessage from '../user-interface/user-interface.messages';
 import FilePathContext from '../../common/file-path/file-path.context';
 import { getDefaultFileUrl } from './file.utils';
-import FileProject from '../../common/strategies/file-path/file-project';
+import ProjectFile from '../../common/strategies/file-path/file-project';
 import FilePathStrategy from '../../common/file-path/file-path.strategy';
 
 describe('FileService', () => {
@@ -29,7 +29,7 @@ describe('FileService', () => {
       const { isValid, content } = fileService.getFileStrategy(selectedOption);
 
       expect(isValid).toBeTruthy();
-      expect(content).toBeInstanceOf(FileDirectory);
+      expect(content).toBeInstanceOf(DirectoryFile);
       expect(content.getInputMessage()).toBe(UserInterfaceMessage.GET_FILE_URL);
       expect(content.isInputRequired()).toBeTruthy();
     });
@@ -40,7 +40,7 @@ describe('FileService', () => {
       const { isValid, content } = fileService.getFileStrategy(selectedOption);
 
       expect(isValid).toBeTruthy();
-      expect(content).toBeInstanceOf(FileProject);
+      expect(content).toBeInstanceOf(ProjectFile);
       expect(content.getInputMessage()).toBe(UserInterfaceMessage.GET_FILE_NAME);
       expect(content.isInputRequired()).toBeTruthy();
     });
@@ -60,7 +60,7 @@ describe('FileService', () => {
 
     beforeEach(() => {
       fileService = new FileService();
-      strategy = new FileDirectory();
+      strategy = new DirectoryFile();
     });
 
     test('Should return false if file is Invalid ', async () => {

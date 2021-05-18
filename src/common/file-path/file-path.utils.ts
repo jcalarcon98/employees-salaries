@@ -1,6 +1,6 @@
 import FilePathStrategy from './file-path.strategy';
-import FileDirectory from '../strategies/file-path/file-directory';
-import FileProject from '../strategies/file-path/file-project';
+import DirectoryFile from '../strategies/file-path/file-directory';
+import ProjectFile from '../strategies/file-path/file-project';
 import DefaultFile from '../strategies/file-path/default-file';
 
 export const getStrategyByOption = (selectedOption : string) : FilePathStrategy | undefined => {
@@ -9,11 +9,11 @@ export const getStrategyByOption = (selectedOption : string) : FilePathStrategy 
   const defaultStrategies = [
     {
       option: 1,
-      strategy: new FileDirectory(),
+      strategy: new DirectoryFile(),
     },
     {
       option: 2,
-      strategy: new FileProject(),
+      strategy: new ProjectFile(),
     },
     {
       option: 3,

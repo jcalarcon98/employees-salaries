@@ -150,5 +150,40 @@ npm run lint
 ```
 
 ## Extras
-
+Some extra relevant features in this project.
 ### Strategy Pattern Applied
+
+The Strategy Pattern was implemented in order to identify how the system user will provide the file with employee information. 
+
+<p align="center">
+  <img src="images/strategy.png" width="1800" align='center'>
+</p>
+
+This approach allows adding new ways of providing the file, without affecting the implementation of the other strategies already implemented, and also facilitates the maintainability of the code. 
+
+### AAA pattern on tests
+
+All tests inside this Project are structured by the AAA pattern
+
+**Arrange**: All the setup code to bring the system to the scenario the test aims to simulate. This might include instantiating the unit under test constructor, adding DB records, mocking/stubbing on objects and any other preparation code
+
+**Act**: Execute the unit under test. Usually 1 line of code
+
+**Assert**: Ensure that the received value satisfies the expectation. Usually 1 line of code
+
+
+Example:
+
+```ts
+test('Should return a list of employees if all conditions are valid', async () => {
+    // Arrange
+    const defaultFileOption = '3';
+    jest.spyOn(UserInterface, 'makeQuestion').mockImplementation(async () => defaultFileOption);
+
+    // Act
+    const employees = await userInterfaceController.execute();
+
+    //Assert
+    expect(employees).toHaveLength(6);
+  });
+```

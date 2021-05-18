@@ -2,7 +2,7 @@ import path from 'path';
 import UserInterfaceMessage from '../../../components/user-interface/user-interface.messages';
 import FilePathStrategy from '../../file-path/file-path.strategy';
 
-class FileProject implements FilePathStrategy {
+class ProjectFile implements FilePathStrategy {
   isInputRequired = () : boolean => true;
 
   getInputMessage = () : string => UserInterfaceMessage.GET_FILE_NAME;
@@ -10,4 +10,4 @@ class FileProject implements FilePathStrategy {
   getFile = (filePath : string) : string => path.join(process.cwd(), 'data', `${filePath}.txt`);
 }
 
-export default FileProject;
+export default ProjectFile;
