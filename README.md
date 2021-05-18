@@ -18,6 +18,15 @@
   * [Core Communication](#core-communication)
   * [High Level Design](#high-level-design)
 * [Approach and Methodology](#approach-and-methodology)
+  * [Solution analysis](#solution-analysis)
+  * [Elements involved in the solution](#elements-involved-in-the-solution)
+  * [Project Structure](#project-structure)
+  * [Business Logic](#business-logic)
+* [Usage](#usage)
+  * [Execute application](#execute-application)
+  * [Run tests](#run-tests)
+  * [Get code coverage](#run-code-coverage)
+  * [Run linter](#run-linter)
 
 ## About the Exercise
 
@@ -79,6 +88,67 @@ This diagram shows the communication between all the elements of the application
 
 ## Approach and Methodology
 
-Before developing the solution, the following activities were carried out:
+In order to achieve the solution, the following activities were carried out
+
+<hr/>
 
 ### Solution analysis
+
+Before developing the solution, the problem was carefully analyzed, where possible scenarios to solve it were identified, and some restrictions that may alter the expected result were also found.
+
+<hr/>
+
+### Elements involved in the solution
+
+The main elements involved in the solution were identified
+
+- Employee
+- File
+- User Interface
+
+<hr/>
+
+### Project Structure
+
+After identifying the main elements involved, we proceeded to map these elements as components of our application, you can see more detailed view [Here](#low-level-design).
+
+<hr/>
+
+### Business logic
+
+Logic was developed for each of the elements identified.
+
+## Usage
+
+First of all, execute the following commands
+
+```bash
+git clone https://github.com/jcalarcon98/employees-salaries.git
+cd employees-salaries
+npm install
+```
+
+### Execute Application
+
+```bash
+npm run start
+```
+
+### Run Tests
+```bash
+npm run test
+```
+
+### Run Code Coverage
+```bash
+npm run coverage
+```
+
+### Run Linter
+```bash
+npm run lint
+```
+
+## Extras
+
+### Strategy Pattern Applied
