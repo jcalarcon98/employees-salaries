@@ -1,18 +1,19 @@
 import FilePathStrategy from './file-path.strategy';
 import UserInterface from '../../components/user-interface/user-interface.model';
 import { readInputInterface } from '../../components/user-interface/user-interface.utils';
+import { isInputRequired } from './file-path.utils';
+import { Message } from '../interfaces/message';
 
 class FilePathContext {
   constructor(private filePathStrategy: FilePathStrategy) {}
 
   async getFilePath() : Promise<string> {
     let fileUrl : string = '';
-    const isInputRequired : boolean = this.filePathStrategy.isInputRequired();
 
-    if (isInputRequired) {
+    if (isInputRequired(this.filePathStrategy)) {
       fileUrl = await UserInterface.makeQuestion(
         readInputInterface,
-        this.filePathStrategy.getInputMessage(),
+        (this.filePathStrategy as FilePathStrategy & Message).getInputMessage(),
       );
     }
 

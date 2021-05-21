@@ -31,7 +31,6 @@ describe('FileService', () => {
       expect(isValid).toBeTruthy();
       expect(content).toBeInstanceOf(DirectoryFile);
       expect(content.getInputMessage()).toBe(UserInterfaceMessage.GET_FILE_URL);
-      expect(content.isInputRequired()).toBeTruthy();
     });
 
     test('Should return a FileProject strategy when selected option is two', () => {
@@ -42,7 +41,6 @@ describe('FileService', () => {
       expect(isValid).toBeTruthy();
       expect(content).toBeInstanceOf(ProjectFile);
       expect(content.getInputMessage()).toBe(UserInterfaceMessage.GET_FILE_NAME);
-      expect(content.isInputRequired()).toBeTruthy();
     });
 
     test('Should return false when selected option is invalid', () => {

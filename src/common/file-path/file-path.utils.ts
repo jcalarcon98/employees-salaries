@@ -25,3 +25,5 @@ export const getStrategyByOption = (selectedOption : string) : FilePathStrategy 
 
   return selectedStrategyOption?.strategy;
 };
+
+export const isInputRequired = (strategy: FilePathStrategy) : boolean => 'getInputMessage' in strategy;

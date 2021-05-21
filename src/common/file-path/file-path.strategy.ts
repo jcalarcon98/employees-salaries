@@ -1,8 +1,4 @@
 interface FilePathStrategy {
-  isInputRequired() : boolean;
-
-  getInputMessage() : string;
-
   getFile(filePath: string) : string;
 }
 
